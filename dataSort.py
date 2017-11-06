@@ -5,7 +5,7 @@ from datetime import datetime
 
 def parse(x):
     return datetime.strptime(x, '%Y %m %d %H')
-dataset = read_csv('raw.csv',  parse_dates=[['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse)
+dataset = read_csv('Data\RAW.csv',  parse_dates=[['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse)
 dataset.drop('No', axis=1, inplace=True)
 #  manually specify column names
 dataset.columns = ['pollution', 'dew', 'temp', 'press', 'wnd_dir', 'wnd_spd', 'snow', 'rain']
@@ -17,6 +17,6 @@ dataset = dataset[24:]
 #  summarize first 5 rows
 print(dataset.head(5))
 #  save to file
-dataset.to_csv('pollution.csv')
+dataset.to_csv('Data\pollution.csv')
 
 

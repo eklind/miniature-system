@@ -1,7 +1,7 @@
 from pandas import read_csv
 from matplotlib import pyplot
 # load dataset
-dataset = read_csv('pollution.csv', header=0, index_col=0)
+dataset = read_csv('Data\pollution.csv', header=0, index_col=0)
 values = dataset.values
 # specify columns to plot
 groups = [0, 1, 2, 3, 5, 6, 7]
